@@ -1,0 +1,5 @@
+{
+	"watch": ["dist", "src"],
+	"ext": "js,graphql,gql",
+	"exec": "node dist/main"
+}

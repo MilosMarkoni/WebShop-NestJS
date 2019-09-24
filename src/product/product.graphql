@@ -1,0 +1,64 @@
+type Query {
+	getProducts(data: GetProductInput): [ProductWithCategory]!
+}
+
+type Mutation {
+	createProduct(data: CreateProductInput): CreatedProductType!
+	updateProduct(data: UpdateProductInput!): MessageReturnType!
+	deleteProduct(_id: Int!): MessageReturnType!
+}
+
+input GetProductInput {
+	name: String
+	description: String
+	category: [Int]
+	quantity: Int
+	pageNum: Int
+	perPage: Int
+}
+
+input CreateProductInput {
+	name: String!
+	description: String!
+	category: [Int!]!
+	quantity: Int!
+}
+
+input UpdateProductInput {
+	_id: Int!
+	name: String!
+	description: String!
+	quantity: Int!
+	category: [Int!]!
+}
+
+type CreatedProductType {
+	data: MessageReturnType!
+	resource: [Product!]!
+}
+
+type CategoryLink {
+	_id: Int!
+	name: String!
+	description: String!
+}
+
+type Product {
+	_id: Int!
+	name: String!
+	description: String!
+	quantity: Int!
+	category: [Int!]!
+}
+
+type ProductWithCategory {
+	_id: Int!
+	name: String!
+	description: String!
+	quantity: Int!
+	category: [CategoryLink!]!
+}
+
+type MessageReturnType {
+	message: String!
+}

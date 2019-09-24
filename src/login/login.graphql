@@ -1,0 +1,14 @@
+type Query {
+	login(data: LoginInput): LoginOutput!
+}
+
+input LoginInput {
+	userName: String!
+	password: String!
+}
+
+type LoginOutput {
+	token: String!
+	message: String!
+	code: Int!
+}

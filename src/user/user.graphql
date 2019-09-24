@@ -1,0 +1,48 @@
+type Query {
+	getUsers(data: GetUsersInput): [User]!
+}
+
+type Mutation {
+	createUser(data: CreateUserInput!): MessageReturnType!
+	updateUser(data: UpdateUserInput!): MessageReturnType!
+	deleteUser(id: String!): MessageReturnType!
+}
+
+input GetUsersInput {
+	_id: String
+	userName: String
+	roles: String
+	password: String
+	status: String
+	email: String
+	perPage: Int
+	pageNum: Int
+}
+
+type User {
+	_id: String!
+	userName: String!
+	roles: String!
+	password: String!
+	status: String!
+	email: String!
+}
+
+input CreateUserInput {
+	userName: String!
+	roles: String!
+	password: String
+	status: String!
+	email: String!
+}
+
+input UpdateUserInput {
+	userName: String!
+	roles: String
+	email: String
+	status: String
+}
+
+type MessageReturnType {
+	message: String!
+}

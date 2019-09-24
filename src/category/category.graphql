@@ -1,0 +1,28 @@
+type Query {
+	getCategories: [Category!]!
+}
+
+type Mutation {
+	createCategory(data: CreateCategoryInput): PayloadCreateCategoryOutput!
+	deleteCategory(_id: Int!): MessageReturnType!
+}
+
+input CreateCategoryInput {
+	name: String!
+	description: String!
+}
+
+type Category {
+	_id: Int!
+	name: String!
+	description: String!
+}
+
+type PayloadCreateCategoryOutput {
+	data: MessageReturnType!
+	resource: [Category!]!
+}
+
+type MessageReturnType {
+	message: String!
+}

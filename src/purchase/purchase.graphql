@@ -1,0 +1,35 @@
+type Query {
+	getPurchase(data: GetPurchaseInput!): [Purchase]!
+}
+
+type Mutation {
+	createPurchase(data: CreatePurchaseInput): MessageReturnType!
+}
+
+input GetPurchaseInput {
+	userName: String!
+	dateFrom: String!
+	dateTo: String!
+	productId: Int!
+	perPage: Int!
+	pageNum: Int!
+}
+
+type Purchase {
+	_id: String!
+	quantity: String!
+	productId: Int!
+	purchaseDate: String!
+	userName: String!
+}
+
+input CreatePurchaseInput {
+	userName: String!
+	quantity: String!
+	productId: Int!
+	purchaseDate: String!
+}
+
+type MessageReturnType {
+	message: String!
+}
