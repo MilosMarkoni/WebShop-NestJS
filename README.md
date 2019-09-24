@@ -9,4 +9,4 @@
 
 ## Description
 
-WebStore service: NestJS framework (NodeJS) implementing GraphQL, Mongoose and MongoDB.
+WebStore service: NestJS framework (NodeJS) implementing TypeScript, GraphQL, Mongoose and MongoDB.
